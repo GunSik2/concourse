@@ -224,6 +224,7 @@ jobs:
       resource: garden-linux
       passed: [testflight]
       trigger: true
+    - get: turbulence
     - get: bosh-stemcell
       resource: aws-stemcell
     - get: deployments
@@ -235,6 +236,7 @@ jobs:
       releases:
         - garden-linux-release/*.tgz
         - candidate-release/concourse-*.tgz
+        - turbulence/*.tgz
   - put: tracker
     params: {repos: [concourse]}
 
@@ -563,6 +565,11 @@ resources:
   type: bosh-io-release
   source:
     repository: cloudfoundry-incubator/garden-linux-release
+
+- name: turbulence
+  type: bosh-io-release
+  source:
+    repository: cppforlife/turbulence-release
 
 - name: tracker
   type: tracker
