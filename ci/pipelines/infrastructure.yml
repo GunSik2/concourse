@@ -1,0 +1,20 @@
+---
+resources:
+- name: timer
+  type: time
+  source:
+    interval: 5m
+
+jobs:
+- name: vsphere-test
+  plan:
+  - get: timer
+    trigger: true
+  - task: download-file
+    tags: [pizza]
+    config:
+      platform: linux
+      image: docker:///busybox
+      run:
+        path: wget
+        args: ["--secure-protocol=TLSv1","https://d26ekeud912fhb.cloudfront.net/bosh-stemcell/aws/light-bosh-stemcell-3063-aws-xen-hvm-ubuntu-trusty-go_agent.tgz"]
