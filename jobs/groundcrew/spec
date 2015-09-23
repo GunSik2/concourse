@@ -63,6 +63,9 @@ properties:
   groundcrew.garden.forward_address:
     description: "garden server connection address to forward through SSH to the TSA"
 
+  groundcrew.name:
+    description: "custom identifier used when registering with the TSA"
+
   groundcrew.resource_types:
     description: "resource types supported by the worker, in [{type: type, image: image}] form"
     default:

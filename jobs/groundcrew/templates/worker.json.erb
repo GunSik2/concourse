@@ -20,6 +20,9 @@
   garden_addr = p("groundcrew.garden.address", nil)
   garden_addr ||= "#{discover_external_ip}:7777"
 
+  name = p("groundcrew.name", nil)
+  name ||= garden_addr
+
   {
     "platform" => p("groundcrew.platform"),
     "tags" => p("groundcrew.tags"),
@@ -27,5 +30,7 @@
     "addr" => garden_addr,
 
     "resource_types" => p("groundcrew.resource_types"),
+
+    "name" => name,
   }.to_json
 %>
