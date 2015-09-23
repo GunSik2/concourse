@@ -8,6 +8,7 @@ files:
   - github.com/concourse/atc/web/templates/**/*
   - github.com/concourse/atc/web/public/**/*
   - github.com/concourse/atc/cmd/atc/*.go # gosub
+  - github.com/concourse/atc/cmd/migrator/*.go # gosub
   - code.google.com/p/go.crypto/bcrypt/*.go # gosub
   - code.google.com/p/go.crypto/blowfish/*.go # gosub
   - github.com/BurntSushi/migration/*.go # gosub

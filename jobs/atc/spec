@@ -8,6 +8,7 @@ description: |
 
 templates:
   atc_ctl.erb: bin/atc_ctl
+  pre-start.erb: bin/pre-start
   pipeline.yml.erb: config/pipeline.yml
 
 packages:

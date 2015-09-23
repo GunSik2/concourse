@@ -6,6 +6,7 @@ dependencies:
 
 files:
   - github.com/concourse/fly/*.go # gosub
+  - github.com/BurntSushi/migration/*.go # gosub
   - github.com/aryann/difflib/*.go # gosub
   - github.com/bmizerany/pat/*.go # gosub
   - github.com/codegangsta/cli/*.go # gosub
@@ -13,6 +14,7 @@ files:
   - github.com/concourse/atc/config/*.go # gosub
   - github.com/concourse/atc/db/*.go # gosub
   - github.com/concourse/atc/db/algorithm/*.go # gosub
+  - github.com/concourse/atc/db/migrations/*.go # gosub
   - github.com/concourse/atc/event/*.go # gosub
   - github.com/concourse/atc/web/routes/*.go # gosub
   - github.com/concourse/fly/commands/*.go # gosub
