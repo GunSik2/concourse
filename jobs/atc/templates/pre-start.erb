@@ -11,17 +11,6 @@ set -e
   end
 %>
 
-LOG_DIR=/var/vcap/sys/log/atc
-
-mkdir -p $LOG_DIR
-chown -R vcap:vcap $LOG_DIR
-
-chpst -u vcap:vcap /var/vcap/packages/atc/bin/migrator \
-  -sqlDataSource=<%= esc("postgres://#{p("atc.postgresql.role.name")}:#{p("atc.postgresql.role.password")}@#{p("atc.postgresql.address")}/#{p("atc.postgresql.database")}?sslmode=disable") %> \
-  1>>$LOG_DIR/atc.stdout.log \
-  2>>$LOG_DIR/atc.stderr.log
-
-# echo 0 to indicate to bosh to continue with no delay
-echo 0
-exit 0
+exec /var/vcap/packages/atc/bin/migrator \
+  -sqlDataSource=<%= esc("postgres://#{p("atc.postgresql.role.name")}:#{p("atc.postgresql.role.password")}@#{p("atc.postgresql.address")}/#{p("atc.postgresql.database")}?sslmode=disable") %>
 
