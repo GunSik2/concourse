@@ -80,6 +80,7 @@ networks:
       - range: 10.244.8.0/24
         gateway: 10.244.8.1
         static: *web-ips
+        cloud_properties: {}
 
 resource_pools:
   - name: concourse
