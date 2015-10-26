@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "acceptance test v1.3: done"
+printf "acceptance test v1.4: done\n"
 
 
